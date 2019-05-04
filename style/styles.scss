@@ -10,7 +10,6 @@ html {
 }
 
 body {
-    position: relative;
     width: 95vw;
     margin: auto
 }
@@ -60,12 +59,13 @@ section {
     }
 }
 
-.fila {
+.row {
     width: 200%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     transition: .5s ease-in-out;
+    margin-bottom: 25vh;
 
 
     >div>h3,
@@ -106,17 +106,6 @@ section {
         }
     }
 
-    h1 {
-        color: #D9EAF4;
-        border-bottom: 3px solid;
-        transform: translateX(-15vw);
-        font-size: 2.5em
-    }
-
-    h3 {
-        padding-right: 7vw
-    }
-
     .picture>h4 {
         text-align: center;
         display: none;
@@ -124,6 +113,52 @@ section {
         font-size: 1.5em;
         letter-spacing: 2px;
         color: gray
+    }
+
+    .specialTitle {
+        color: #D9EAF4;
+        border-bottom: 3px solid;
+        transform: translateX(-15vw);
+        font-size: 4vw
+    }
+
+    .specialTitle2 {
+        color: #D9EAF4;
+        border-bottom: 3px solid;
+        font-size: 4vw
+    }
+
+    h3 {
+        padding-right: 7vw
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        background-color: white;
+
+        >div {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+
+            >div {
+                position: relative;
+                border: 1px solid rgba(128, 128, 128, 0.192);
+                padding: 5%;
+
+                a {
+                    display: inline;
+                    text-decoration: none
+                }
+
+                .fas {
+                    top: -60px;
+                    right: 20px;
+                }
+            }
+        }
     }
 
     @media (max-width: 900px) {
@@ -137,8 +172,12 @@ section {
             margin-top: 3vh
         }
 
-        h1 {
+        .specialTitle {
             transform: translateX(0)
+        }
+
+        .card {
+            width: 90%
         }
     }
 }

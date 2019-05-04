@@ -10,7 +10,6 @@ html {
 }
 
 body {
-  position: relative;
   width: 95vw;
   margin: auto;
 }
@@ -53,18 +52,19 @@ section > div ~ div {
   background-color: #8DA7BE;
 }
 
-.fila {
+.row {
   width: 200%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   transition: 0.5s ease-in-out;
+  margin-bottom: 25vh;
 }
-.fila > div > h3,
-.fila > div > h6 {
+.row > div > h3,
+.row > div > h6 {
   color: #554640;
 }
-.fila .picture {
+.row .picture {
   margin: 10vh;
   width: 100%;
   background: white;
@@ -72,16 +72,16 @@ section > div ~ div {
   transform: scale(0.95);
   transition: 0.2s ease-in-out;
 }
-.fila .picture img {
+.row .picture img {
   width: 100%;
   padding: 0.5vw;
   height: auto;
   z-index: 100;
 }
-.fila .picture h4 {
+.row .picture h4 {
   display: none;
 }
-.fila .picture:hover {
+.row .picture:hover {
   transform: scale(1);
   transform: rotateZ(-3deg);
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.36);
@@ -89,19 +89,10 @@ section > div ~ div {
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.36);
   cursor: pointer;
 }
-.fila .picture:hover h4 {
+.row .picture:hover h4 {
   display: block;
 }
-.fila h1 {
-  color: #D9EAF4;
-  border-bottom: 3px solid;
-  transform: translateX(-15vw);
-  font-size: 2.5em;
-}
-.fila h3 {
-  padding-right: 7vw;
-}
-.fila .picture > h4 {
+.row .picture > h4 {
   text-align: center;
   display: none;
   font-family: Patrick Hand, monospace;
@@ -109,18 +100,59 @@ section > div ~ div {
   letter-spacing: 2px;
   color: gray;
 }
+.row .specialTitle {
+  color: #D9EAF4;
+  border-bottom: 3px solid;
+  transform: translateX(-15vw);
+  font-size: 4vw;
+}
+.row .specialTitle2 {
+  color: #D9EAF4;
+  border-bottom: 3px solid;
+  font-size: 4vw;
+}
+.row h3 {
+  padding-right: 7vw;
+}
+.row .card {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  background-color: white;
+}
+.row .card > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.row .card > div > div {
+  position: relative;
+  border: 1px solid rgba(128, 128, 128, 0.192);
+  padding: 5%;
+}
+.row .card > div > div a {
+  display: inline;
+  text-decoration: none;
+}
+.row .card > div > div .fas {
+  top: -60px;
+  right: 20px;
+}
 @media (max-width: 900px) {
-  .fila {
+  .row {
     flex-direction: column;
   }
-  .fila > div > h3 {
+  .row > div > h3 {
     color: white;
   }
-  .fila div:first-child {
+  .row div:first-child {
     margin-top: 3vh;
   }
-  .fila h1 {
+  .row .specialTitle {
     transform: translateX(0);
+  }
+  .row .card {
+    width: 90%;
   }
 }
 
