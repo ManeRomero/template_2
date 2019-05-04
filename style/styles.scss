@@ -5,6 +5,10 @@
     font-family: Roboto Mono, monospace, sans-serif
 }
 
+html {
+    background-color: #D9EAF4
+}
+
 body {
     position: relative;
     width: 95vw;
@@ -12,18 +16,12 @@ body {
 }
 
 h1 {
-    color: #D9EAF4;
     font-size: 2em;
-    padding: 1vw;
     font-weight: 700;
 }
 
 h3 {
     padding: 1vw;
-}
-
-small {
-    padding: 1vw
 }
 
 header {
@@ -36,6 +34,11 @@ header {
 
     flex: {
         direction: row;
+    }
+
+    h1,
+    small {
+        color: #D9EAF4;
     }
 }
 
@@ -62,24 +65,80 @@ section {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    transition: .5s ease-in-out;
+
 
     >div>h3,
     >div>h6 {
         color: #554640;
     }
 
-    img {
-        width: 100%;
-        padding: 0.5vw;
-        height: auto;
-        z-index: 100;
-    }
-
-    div:first-child {
+    .picture {
         margin: 10vh;
-        width: 110%;
+        width: 100%;
         background: white;
         border-radius: 3px;
-        transform: rotateZ(-3deg)
+        transform: scale(.95);
+        transition: .2s ease-in-out;
+
+        img {
+            width: 100%;
+            padding: 0.5vw;
+            height: auto;
+            z-index: 100;
+        }
+
+        h4 {
+            display: none
+        }
+    }
+
+    .picture:hover {
+        transform: scale(1);
+        transform: rotateZ(-3deg);
+        -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.36);
+        -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.36);
+        box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.36);
+        cursor: pointer;
+
+        h4 {
+            display: block;
+        }
+    }
+
+    h1 {
+        color: #D9EAF4;
+        border-bottom: 3px solid;
+        transform: translateX(-15vw);
+        font-size: 2.5em
+    }
+
+    h3 {
+        padding-right: 7vw
+    }
+
+    .picture>h4 {
+        text-align: center;
+        display: none;
+        font-family: Patrick Hand, monospace;
+        font-size: 1.5em;
+        letter-spacing: 2px;
+        color: gray
+    }
+
+    @media (max-width: 900px) {
+        flex-direction: column;
+
+        >div>h3 {
+            color: white
+        }
+
+        div:first-child {
+            margin-top: 3vh
+        }
+
+        h1 {
+            transform: translateX(0)
+        }
     }
 }
